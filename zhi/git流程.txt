@@ -1,0 +1,7 @@
+git pull
+git branch dev
+git checkout dev
+git add .
+git commit -m "demo"
+git push
+  ////
