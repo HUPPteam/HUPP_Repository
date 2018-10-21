@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		var str = 'asdfssaaasasasasaa';	
+		var mostStr;
+		var count =1;
+		var o={};
+		for (var i = 0; i <= str.length; i++) {
+			var item =str.charAt(i);
+			if(o[item]){
+				o[item]++;
+			}else{
+				o[item] =1;
+			}
+		}
+		for (var key in o){
+			if(count <o[key]){
+				mostStr=key;				
+				count =o[key];
+			}
+		}
+		console.log(mostStr);
+		console.log(count);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

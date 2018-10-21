@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	ul,ol{
+		list-style: none;
+	}
+	img{
+   		width: 800px;
+    	height: 400px;
+	}
+	.box{
+   		width: 800px;
+    	height: 400px;
+    	margin: 100px auto;	
+    	/*background-color: pink;*/
+    	position: relative;
+	}
+	.box ul li {
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+	}
+	.box ol {
+	    position: absolute;
+	    bottom: 10px;
+	    left: 50%;
+        transform: translate(-50%,0);
+	}
+	
+	.box ol li {
+	    float: left;
+	    width: 20px;
+	    height: 20px;
+	    text-align: center;
+	    line-height: 20px;
+	    border: 1px solid #ccc;
+	    box-sizing: border-box;
+	    border-radius: 50%;
+	    background: rgba(0,0,0, 0.3);
+	    color: #fff;
+	    margin: 0 4px;
+	    cursor: pointer;
+	}
+	.box ol li.current {
+	    background-color: rgba(225, 105, 105, .3);
+	}
+	.left,.right{
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        line-height:50px;
+        position: absolute;
+        color: #fff;
+        top: 50%;
+        text-decoration: none;
+        font-size: 40px;
+        transform: translate(0,-50%);
+        background-color: rgba(225, 105, 105, .3);
+        display: none;
+	}
+	.left{
+		left: 0;
+	}
+	.right{
+		right: 0;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul id="show">
+			<li><a href="#"><img src="images/01.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/02.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/03.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/04.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/05.jpg" alt=""></a></li>
+		</ul>
+		<ol id="btn"></ol>
+		<a href="#">
+			<span class="left arr">&lt;</span>
+			<span class="right arr">&gt;</span>
+		</a>
+	</div>
+
+	<script src="js/jquery.js"></script>
+	<script>
+	$(function(){
+		//按钮切换图片功能
+		$('#show>li').each(function(index,element){
+			$('<li>'+index+'</li>').appendTo('#btn');
+		})
+		$('#btn>li:eq(0)').addClass('current');
+		$('#btn>li').mouseenter(function(){
+			currentIndex =$(this).index();
+			$('#show>li:eq('+currentIndex+')').stop().fadeIn(1000).siblings().stop().fadeOut(1000);
+			$(this).addClass('current').siblings().removeClass('current');
+		});
+		//左右箭头切换图片功能
+		var currentIndex =0;
+		$('.right').click(function(){
+			currentIndex++;
+			if(currentIndex ==$('#show>li').length){
+				currentIndex =0;
+			}
+				clickChange();
+		});
+		function clickChange(){
+			$('#show>li:eq('+currentIndex+')').stop().fadeIn(1000).siblings().stop().fadeOut(1000);
+			$('#btn>li:eq('+currentIndex+')').addClass('current').siblings().removeClass('current');
+		}
+
+		$('.left').click(function(){
+			currentIndex--;
+			if(currentIndex <0){
+				currentIndex =$('#show>li').length-1;
+			}
+			clickChange();
+		});
+
+		//图片自动播放
+    	var timerId = setInterval(autoPlay, 1000);
+    	function autoPlay() {
+    	    $('.right').trigger('click');
+    	}
+    	$('.box').mouseenter(function () {
+    	    $('.arr').show(500);
+    	    clearInterval(timerId);
+    	}).mouseleave(function () {
+    	    $('.arr').hide(500);
+			timerId = setInterval(autoPlay, 1000);
+    	});
+	});
+	</script>
+</body>
+</html>
