@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	ul,ol{
+		list-style: none;
+	}
+	img{
+   		width: 800px;
+    	height: 400px;
+	}
+	.banner{
+   		width: 800px;
+    	height: 400px;
+    	margin: 100px auto;	
+    	/*background-color: pink;*/
+    	position: relative;
+	}
+	.banner ul li {
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+	}
+	.banner ol {
+	    position: absolute;
+	    bottom: 10px;
+	    left: 50%;
+        transform: translate(-50%,0);
+	}
+	
+	.banner ol li {
+	    float: left;
+	    width: 20px;
+	    height: 20px;
+	    text-align: center;
+	    line-height: 20px;
+	    border: 1px solid #ccc;
+	    box-sizing: border-box;
+	    border-radius: 50%;
+	    background: rgba(0,0,0, 0.3);
+	    color: #fff;
+	    margin: 0 4px;
+	    cursor: pointer;
+	}
+	.banner ol li.current {
+	    background-color: rgba(225, 105, 105, .3);
+	}
+	.left,.right{
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        line-height:50px;
+        position: absolute;
+        color: #fff;
+        top: 50%;
+        text-decoration: none;
+        font-size: 40px;
+        transform: translate(0,-50%);
+        background-color: rgba(225, 105, 105, .3);
+        display: none;
+	}
+	.left{
+		left: 0;
+	}
+	.right{
+		right: 0;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="banner">
+		<ul class="bannerImg">
+			<li><a href="#"><img src="images/01.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/02.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/03.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/04.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/05.jpg" alt=""></a></li>
+		</ul>
+		<ol id="btn"></ol>
+		<a href="#">
+			<span class="left arr">&lt;</span>
+			<span class="right arr">&gt;</span>
+		</a>
+	</div>
+
+	<script>
+		window.onload =function(){
+			bannerEffect();
+		};
+		//原生JS+css实现非移动端轮播功能
+		function bannerEffect(){
+			//1.准备轮播图所需各元素
+			//1.1获取相关元素
+			var banner =document.querySelector('.banner');
+			var bannerUl =banner.querySelector('.bannerImg');
+			var bannerWidth =banner.offsetWidth;
+			var list =bannerUl.querySelectorAll('li');
+			var btn =document.querySelector('#btn');
+			//2.2获取首尾图片元素,为克隆准备(障眼法)
+			var first =bannerUl.querySelector('li:first-of-type');
+			var last  =bannerUl.querySelector('li:last-of-type');
+			//图片的张数
+			var count =list.length;
+			//2.3设置ul位移范围,即所有list的width(后ul设置位移初始值需要)
+			var listWidth =count*bannerWidth;
+
+			//2.自动生成点标记
+			var ol =banner.querySelector('ol');
+			//2.1动态生成点标记
+			for (var i = 0; i < list.length; i++) {
+				var li =document.createElement('li');
+				console.log(li);
+				//2.2将动态生成的点标记放到ol中去
+//				li.appendTo(ol); //appendTo是jquery方法此处不可用
+				ol.appendChild(li);
+
+
+			}
+
+		}
+	</script>
+</body>
+</html>

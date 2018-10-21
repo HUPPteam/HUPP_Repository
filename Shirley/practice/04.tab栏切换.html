@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	.box{
+		width: 400px;
+		height: 400px;
+		margin: 100px auto;
+		border: 1px solid blue;
+		/*background-color: pink;*/
+		overflow: hidden;
+	}
+	.hd{
+		height: 45px;
+		line-height: 45px;
+		text-align: center;
+		background-color: pink;
+		display: flex;
+	}
+	.hd span{
+		width: 50px;
+		cursor: pointer;
+	}
+	.hd span.current{
+		background-color: lightgreen;
+	}
+	.bd div{
+		display: none;
+	}
+	.bd div img{
+		width: 100%;
+
+	}
+	.bd div.current{
+		display: block;
+	}
+	</style>
+</head>
+<body>
+<div class="box">
+	<div class="hd" id="hd">
+		<span class="current">老大</span>
+		<span>老徐</span>
+		<span>王喜</span>
+		<span>陈毅</span>
+		<span>周旭</span>
+		<span>我</span>
+		<span>老陈</span>
+		<span>小王</span>
+	</div>
+	<div class="bd" id="bd">
+		<div class="current"><img src="images/laohu.jpg" alt=""></div>
+		<div><img src="images/laoxu.jpg" alt=""></div>
+		<div><img src="images/wangxi.jpg" alt=""></div>
+		<div><img src="images/chenyi.jpg" alt=""></div>
+		<div><img src="images/zhouxu.jpg" alt=""></div>
+		<div><img src="images/xiahong.jpg" alt=""></div>
+		<div><img src="images/laochen.jpg" alt=""></div>
+		<div><img src="images/xiaowang.jpg" alt=""></div>
+	</div>
+</div>
+
+<script>
+	var spans =document.getElementById('hd').getElementsByTagName('span');
+	var divs=document.getElementById('bd').getElementsByTagName('div');
+	for(var i=0; i<spans.length; i++){
+		spans[i].setAttribute('index',i);
+		spans[i].onmouseenter =function(){
+			var index =parseInt(this.getAttribute('index'));
+			for(var j=0; j<spans.length; j++){
+				divs[j].className =spans[j].className ='';
+			}
+			divs[index].className =this.className='current';
+		}
+	}
+</script>
+</body>
+</html>
