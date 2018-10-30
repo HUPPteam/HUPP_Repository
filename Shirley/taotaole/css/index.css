@@ -1,0 +1,85 @@
+.mui-content {
+  width: 100%;
+  background-color: #fff;
+  padding-bottom: 70px;
+}
+.mui-content .nav-link {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.mui-content .nav-link > a {
+  width: 33.33%;
+}
+.mui-content .nav-link > a > img {
+  width: 100%;
+}
+.mui-content .brand {
+  width: 100%;
+  padding: 0 10px ;
+}
+.mui-content .brand .title {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.mui-content .brand .list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.mui-content .brand .list > li {
+  width: 25%;
+}
+.mui-content .brand .list > li > a,
+.mui-content .brand .list > li a > img {
+  width: 100%;
+}
+.mui-content .product {
+  width: 100%;
+  padding: 0 10px;
+}
+.mui-content .product .title {
+  width: 100%;
+  margin: 10px 0;
+}
+.mui-content .product .list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.mui-content .product .list > li {
+  width: 50%;
+  padding: 5px;
+}
+.mui-content .product .list > li > a {
+  width: 100%;
+  box-shadow: 0 0 5px #ccc;
+  padding-bottom: 8px;
+}
+.mui-content .product .list > li > a > img {
+  width: 100%;
+}
+.mui-content .product .list > li > a .name {
+  margin: 10px;
+  line-height: 18px;
+  display: block;
+  color: deeppink;
+  text-align: center;
+  font-size: 14px;
+  padding: 6px;
+  height: 44px;
+}
+.mui-content .product .list > li > a > p {
+  font-size: 14px;
+  text-align: center;
+}
+.mui-content .product .list > li > a > p > span:nth-of-type(1) {
+  color: red;
+  font-size: 16px;
+  margin-right: 5px;
+}
+.mui-content .product .list > li > a .buy-now {
+  background-color: hotpink;
+  color: #FFF;
+  margin: 10px auto;
+  border: none;
+  display: block;
+}

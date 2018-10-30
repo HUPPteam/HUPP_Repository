@@ -1,0 +1,48 @@
+.mui-content {
+  padding: 0 10px;
+  background-color: #fff;
+}
+.mui-content .mui-input-row label {
+  color: darkgreen;
+  font-size: 14px;
+  padding-left: 20px;
+}
+.mui-content .mui-input-row .mui-input-clear,
+.mui-content .mui-input-row .mui-input-password {
+  font-size: 14px;
+}
+.mui-content .mui-input-row .getCode {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: darkgreen;
+  color: #fff;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.mui-content .mui-button-row {
+  text-align: center;
+  line-height: 45px;
+}
+.mui-content .mui-button-row #register-btn,
+.mui-content .mui-button-row #login-btn,
+.mui-content .mui-button-row #modify-btn,
+.mui-content .mui-button-row #addAddress {
+  border: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: darkgreen;
+  letter-spacing: 5px;
+  font-size: 18px;
+}
+.mui-content .login {
+  float: right;
+  margin: 20px;
+  color: tomato;
+}

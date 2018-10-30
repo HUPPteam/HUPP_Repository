@@ -1,0 +1,100 @@
+.mui-content {
+  padding-bottom: 75px;
+  width: 100%;
+  background-color: #fff;
+}
+.mui-content .product-title {
+  display: block;
+  padding: 10px;
+  color: deeppink;
+  font-size: 18px;
+}
+.mui-content .price {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+}
+.mui-content .price > span:nth-of-type(1) {
+  color: red;
+  padding-right: 15px;
+  font-size: 20px;
+}
+.mui-content .price > span:nth-of-type(2) {
+  margin-right: 10px;
+  font-size: 14px;
+  text-decoration: line-through;
+}
+.mui-content .size {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+}
+.mui-content .size > span {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #ccc;
+  line-height: 28px;
+  text-align: center;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.mui-content .size .current {
+  background-color: darkgreen;
+  color: #fff;
+}
+.mui-content .num {
+  padding: 10px;
+  font-size: 14px;
+  line-height: 28px;
+  border-top: 1px solid #ccc;
+}
+.mui-content .num .selectNum {
+  padding: 0 10px;
+}
+.mui-content .num .selectNum > span {
+  float: left;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #ccc;
+  text-align: center;
+  line-height: 28px;
+}
+.mui-content .num .selectNum > input {
+  text-align: center;
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  float: left;
+  border-left: none;
+  border-right: none;
+}
+.mui-content .num .surplus {
+  margin-left: 10px;
+}
+.mui-content .num .surplus > i {
+  font-style: normal;
+  color: red;
+}
+.mui-content .cartBtn {
+  width: 100%;
+  padding: 0 10px;
+  line-height: 35px;
+  margin: 35px auto;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  display: flex;
+}
+.mui-content .cartBtn > a {
+  color: #fff;
+  width: 50%;
+  background-color: coral;
+}
+.mui-content .cartBtn > span {
+  width: 50%;
+  background-color: darkcyan;
+}

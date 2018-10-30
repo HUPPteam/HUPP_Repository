@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>address</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+    <link rel="stylesheet" href="./assets/mui/css/iconfont.css" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="./css/form.css" />
+    <script src="assets/zepto/zepto.min.js"></script>
+    <script src="assets/artTemplate/template-native.js"></script>
+    <script src="assets/mui/js/mui.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/address.js"></script>
+    <style>
+        .mui-media-body {
+            font-size: 15px;
+        }
+
+        .addAddress {
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 16px;
+            color: crimson;
+            border-bottom: 2px solid darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="mui-bar mui-bar-nav my-header">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">地址管理</h1>
+        <a class="mui-icon mui-icon-search mui-pull-right"></a>
+    </header>
+    <div class="mui-content">
+        <a href="addAddress.html?isEdit=0" class="addAddress">添加收货地址</a>
+        <ul class="mui-table-view" id="addressBox">
+            <!-- <li class="mui-table-view-cell mui-media">
+                <div class="mui-slider-right mui-disabled">
+                    <span class="mui-btn mui-btn-blue edit-btn" data-id="<%=res[i].id %>">编辑</span>
+                    <a href="javascript:;" class="mui-btn mui-btn-red delete-btn" data-id="<%=res[i].id %>">删除</a>
+                </div>
+                <div class="mui-media-body mui-slider-handle">
+                    邮编：
+                    <%=res[i].postCode %> 收货人：
+                        <%=res[i].recipients %>
+                            <p class='mui-ellipsis'>
+                                <%=res[i].address %>
+                                    <%=res[i].addressDetail %>
+                            </p>
+                </div>
+            </li> -->
+        </ul>
+    </div>
+    <nav class="mui-bar mui-bar-tab ">
+        <a class="mui-tab-item" href="index.html">
+            <span class="mui-icon mui-icon-navigate"></span>
+            <span class="mui-tab-label muitab">首页</span>
+        </a>
+        <a class="mui-tab-item" href="category.html">
+            <span class="mui-icon mui-icon-bars"></span>
+            <span class="mui-tab-label muitab">分类</span>
+        </a>
+        <a class="mui-tab-item" href="cart.html">
+            <span class="mui-icon iconfont icon-gouwuche"></span>
+            <span class="mui-tab-label muitab">购物车</span>
+        </a>
+        <a class="mui-tab-item current" href="user.html">
+            <span class="mui-icon mui-icon-contact"></span>
+            <span class="mui-tab-label muitab">会员中心</span>
+        </a>
+    </nav>
+
+    <script type="text/template" id="addressTpl">
+		<% for(var i=0;i< res.length;i++){ %>
+		<li class="mui-table-view-cell mui-media">
+			<div class="mui-slider-right mui-disabled">
+				<span
+					class="mui-btn mui-btn-blue editBtn"
+					data-id="<%=res[i].id %>">编辑</span>
+				<a
+					href="javascript:;"
+					class="mui-btn mui-btn-red deleteBtn"
+					data-id="<%=res[i].id %>">删除</a>
+			</div>
+	        <div class="mui-media-body mui-slider-handle">
+	           	邮编：<%=res[i].postCode %> 收货人：<%=res[i].recipients %> 
+	            <p class='mui-ellipsis'>
+	            	<%=res[i].address %> <%=res[i].addressDetail %>
+	            </p>
+	        </div>
+		</li>
+		<% } %>
+	</script>
+</body>
+
+</html>

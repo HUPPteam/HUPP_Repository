@@ -1,0 +1,40 @@
+.mui-scroll-wrapper {
+  margin-top: 44px;
+  margin-bottom: 70px;
+}
+.mui-scroll-wrapper p {
+  font-size: 16px;
+  color: deeppink;
+}
+.mui-scroll-wrapper .mui-row {
+  margin: 5px auto;
+}
+.mui-scroll-wrapper .mui-row .price-1 {
+  font-size: 14px;
+  color: red;
+  margin-right: 15px;
+}
+.mui-scroll-wrapper .mui-row .price-2 {
+  text-decoration: line-through;
+  font-size: 14px;
+  color: #666;
+}
+.mui-scroll-wrapper .mui-row .gray i {
+  font-size: 14px;
+  font-style: normal;
+  color: red;
+}
+.mui-scroll-wrapper .delInfo {
+  padding: 10px;
+  display: flex;
+}
+.mui-scroll-wrapper .delInfo > h4:nth-of-type(2) {
+  color: deeppink;
+  font-size: 18px;
+  margin-left: 155px;
+}
+.mui-scroll-wrapper .delInfo .total i {
+  font-size: 20px;
+  font-style: normal;
+  color: red;
+}

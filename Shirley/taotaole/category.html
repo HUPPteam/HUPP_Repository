@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>category</title>
+    <link rel="stylesheet" href="./assets/mui/css/mui.min.css" />
+    <link rel="stylesheet" href="./assets/mui/css/iconfont.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/category.css" />
+    <script src="./assets/zepto/zepto.min.js"></script>
+    <script src="./assets/mui/js/mui.min.js"></script>
+    <script src="./assets/artTemplate/template-native.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/category.js"></script>
+
+</head>
+
+<body>
+    <header class="mui-bar mui-bar-nav">
+        <a href="javascript:;" class="mui-icon mui-icon-back mui-pull-left"></a>
+        <h1 class="mui-title">淘淘乐</h1>
+    </header>
+    <div class="content clearfix">
+        <div class="content_l">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <ul id="cateLeft">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content_r">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <ul id="cateRight">
+                        <!-- <li>
+                            <a href="javascript:;">
+                                <img src="./images/brand1.png" alt="">
+                                <p>123</p>
+                            </a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="mui-bar mui-bar-tab ">
+        <a class="mui-tab-item" href="index.html">
+            <span class="mui-icon mui-icon-navigate"></span>
+            <span class="mui-tab-label muitab">首页</span>
+        </a>
+        <a class="mui-tab-item current" href="category.html">
+            <span class="mui-icon mui-icon-bars"></span>
+            <span class="mui-tab-label muitab">分类</span>
+        </a>
+        <a class="mui-tab-item" href="cart.html">
+            <span class="mui-icon iconfont icon-gouwuche"></span>
+            <span class="mui-tab-label muitab">购物车</span>
+        </a>
+        <a class="mui-tab-item" href="user.html">
+            <span class="mui-icon mui-icon-contact"></span>
+            <span class="mui-tab-label muitab">会员中心</span>
+        </a>
+    </nav>
+
+    <script id="cate_l" type="text/template">
+        <% for(var i=0;i< rows.length;i++) { %>
+        <li data-id="<%=rows[i].id; %>">
+            <a href="javascript:;" ><%=rows[i].categoryName; %></a>
+        </li> 
+        <% } %>
+    </script>
+
+    <script id="cate_r" type="text/template">
+        <% for(var i=0;i< rows.length;i++) { %>
+        <li>
+            <a href="javascript:;">
+                <img src="<%=rows[i].brandLogo; %>" alt="">
+                <p><%=rows[i].brandName; %></p>
+            </a>
+        </li>
+        <% } %>
+
+        <% if(!rows.length){ %>
+        <div class="error">抱歉!暂时还没有更新数据</div> 
+        <% } %>
+    </script>
+</body>
+
+</html>
