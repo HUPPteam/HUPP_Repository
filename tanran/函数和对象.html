@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	function foo(){
+		foo.a = function(){alert(1)};
+		this.a = function(){alert(2)};
+		a=function(){alert(3)}
+		var a = function(){alert(4)}
+	}
+
+	foo.prototype.a = function(){alert(5)}
+
+	foo.a = function(){alert(6)}
+
+	foo.a(); //6
+
+	var obj = new foo() //
+
+	obj.a() //2
+
+	foo.a() //1
+</script>
+</body>
+</html>
