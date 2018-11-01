@@ -1,0 +1,11 @@
+{
+    "name":"cals-xl-juejiang",
+    "version":"1.0.1",
+    "main":"./lib/main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "keywords": ["cals"],
+      "author": "haoting",
+      "license": "ISC"
+}
